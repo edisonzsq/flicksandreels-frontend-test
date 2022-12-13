@@ -5,7 +5,7 @@ import Form from "./Form";
 import "./Review.css";
 
 function Review() {
-  const [reviewData, setReviewData] = useState([]);
+  const [reviewData, setReviewData] = useState({});
   // const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
@@ -56,8 +56,6 @@ function Review() {
     });
   };
 
-  console.log(reviewData.items);
-
   const handleSubmitFromChild = (val) => {
     console.log("This is from child " + val);
     // addToReviewData(val);
@@ -82,32 +80,7 @@ function Review() {
         <div className="section">
           <h4>{reviewData.title}</h4>
         </div>
-        <div className="section">{reviewData.length > 0 ? reviewData.items.map((review, index) => {
-      return (
-        <div>
-          <h6>
-            <strong>{review.username}</strong>
-          </h6>
-          <h6>
-            <em>"{review.heading}"</em>
-          </h6>
-          <p>
-            <ShowMoreText
-              lines={3}
-              more="Show more"
-              less="Show less"
-              className="content-css"
-              anchorClass="show-more-less-clickable"
-              onClick={executeOnClick}
-              expanded={false}
-              truncatedEndingComponent={"... "}
-            >
-              {review.content}
-            </ShowMoreText>
-          </p>
-        </div>
-      );
-    }) : null}</div>
+        <div className="section">{reviewData?.items?.length > 0 ? <ReviewResult /> : null}</div>
         <div className="section">
           <h4>Add a review</h4>
           <Form onHandleSubmit={handleSubmitFromChild} />
