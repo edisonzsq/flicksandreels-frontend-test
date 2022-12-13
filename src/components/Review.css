@@ -1,0 +1,36 @@
+.divResult{
+    display: inline-block;
+    height: 50vw;
+        width:300gt0px;
+}
+.result {
+    display: block;
+    height: 40vw;
+    width: 250px;
+    border: solid;
+    border-color: blue;
+    padding: 2px;
+    margin: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black
+}
+
+.result:hover {
+    background-color: lightblue;
+    border-color: red
+}
+
+p {
+    font-size: 12px;
+}
+
+.section {
+    border: solid;
+    border-color:black;
+    margin: 1em;
+    padding: 0.5em;
+}
+
+h6 {
+    font-size: 16px;
+}
